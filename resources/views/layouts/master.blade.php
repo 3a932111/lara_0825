@@ -20,14 +20,14 @@
     </head>
     <body>
         <!-- 3-d-2 Navigation-->
-        @include('layouts.partials.navigation')
+        @include('layouts.partials.navigation');
 
         <!-- 3-d-3 Page Header-->
         <!-- 3-d-3 Main Content-->
-        @yield('content')
+        @yield('content');
 
         <!-- Footer-->
-        @include('layouts.partials.footer')
+        @include('layouts.partials.footer');
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
