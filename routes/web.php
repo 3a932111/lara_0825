@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Models\post;
+use App\Models\Comment;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +17,18 @@ use App\Models\post;
 */
 
 
-  Route::get('/', function () {
-     /*用post方式新增資料
+
+Route::get('/', function () {
+
+    $post=Post::find(10);
+    echo '標題:'.$post->title."<br>";
+    echo '內容:'.$post->content."<br>";
+    $comments=$post->comments()->get();
+    foreach ($comments as $comment){
+        echo '留言:'.$comment->content."<br>";
+        echo '----------------'.'<br>';
+    }
+    /*用post方式新增資料
         //return redirect(route('posts.index'));
         $post=new Post();
         $post->title='test title';
@@ -26,11 +37,11 @@ use App\Models\post;
         return 'save,OK';
     */
 
-     /*用create方式新增資料*/
+     /*用create方式新增資料
       post::create([
         'title'=>'created title',
         'content'=>'created content',
-      ]);
+      ]);*/
 
 
       /*$posts=Post::all();
@@ -79,7 +90,16 @@ use App\Models\post;
 
       $lastPost=post::find(4);
       dd($lastPost);*/
-      
+
+      /*新增comment
+      $comment=new Comment();
+      $comment->content='i love!';
+      $comment->post_id='18';
+      $comment->save();
+      return 'save,OK';*/
+
+
+
 
 
 
