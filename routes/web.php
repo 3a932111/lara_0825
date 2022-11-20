@@ -66,6 +66,25 @@ use App\Models\post;
       /*刪除 資料--用 destroy方法刪除多筆
       post::destroy(3,5,7);*/
 
+      /*練習 6 取得Collection
+      $allPosts=Post::all();
+      dd($allPosts);
+
+      $featuredPosts=Post::where('is_feature',1)->get();
+      dd($featuredPosts);*/
+
+      /*練習 6 取得Model
+      $fourthPost=post::find(4);
+      dd($fourthPost);
+
+      $lastPost=post::find(4);
+      dd($lastPost);*/
+      
+
+
+
+
+
 });
 
 
