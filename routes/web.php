@@ -42,19 +42,19 @@ use App\Models\post;
     /*$posts=Post::where('id','<',10)->orderBy('id','DESC')->get();
       dd($posts);*/
 
-    /*使用 update方法*/
+    /*使用 update方法
       $post=Post::find(1);
       $post->update([
           'title'=>'updatedtitle',
           'content'=>'updatedcontent',
-      ]);
+      ]);*/
 
 
-     /*用 save方法
+     /*用 save方法*/
       $post=Post::find(1);
       $post->title='saved title';
       $post->content='saved content';
-      $post->save();*/
+      $post->save();
 });
 
 
