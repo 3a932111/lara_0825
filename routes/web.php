@@ -26,12 +26,13 @@ use App\Models\post;
         return 'save,OK';
     */
 
-/*用create方式新增資料
-post::create([
-    'title'=>'created title',
-    'content'=>'created content',
-]);
-*/
+     /*用create方式新增資料*/
+      post::create([
+        'title'=>'created title',
+        'content'=>'created content',
+      ]);
+
+
       /*$posts=Post::all();
       dd($posts);*/
 
@@ -40,6 +41,20 @@ post::create([
 
     /*$posts=Post::where('id','<',10)->orderBy('id','DESC')->get();
       dd($posts);*/
+
+    /*使用 update方法*/
+      $post=Post::find(1);
+      $post->update([
+          'title'=>'updatedtitle',
+          'content'=>'updatedcontent',
+      ]);
+
+
+     /*用 save方法
+      $post=Post::find(1);
+      $post->title='saved title';
+      $post->content='saved content';
+      $post->save();*/
 });
 
 
