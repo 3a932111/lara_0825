@@ -42,7 +42,7 @@ use App\Models\post;
     /*$posts=Post::where('id','<',10)->orderBy('id','DESC')->get();
       dd($posts);*/
 
-    /*使用 update方法
+    /*更新 資料--使用 update方法
       $post=Post::find(1);
       $post->update([
           'title'=>'updatedtitle',
@@ -50,11 +50,22 @@ use App\Models\post;
       ]);*/
 
 
-     /*用 save方法*/
+     /*更新 資料--用 save方法
       $post=Post::find(1);
       $post->title='saved title';
       $post->content='saved content';
-      $post->save();
+      $post->save();*/
+
+      /*刪除 資料--用 delete方法
+      $post=Post::find(1);
+      $post->delete();*/
+
+      /*刪除 資料--用 destroy方法
+      post::destroy(2);*/
+
+      /*刪除 資料--用 destroy方法刪除多筆
+      post::destroy(3,5,7);*/
+
 });
 
 
