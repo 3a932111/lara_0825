@@ -20,14 +20,8 @@ use App\Models\Comment;
 
 Route::get('/', function () {
 
-    $post=Post::find(10);
-    echo '標題:'.$post->title."<br>";
-    echo '內容:'.$post->content."<br>";
-    $comments=$post->comments()->get();
-    foreach ($comments as $comment){
-        echo '留言:'.$comment->content."<br>";
-        echo '----------------'.'<br>';
-    }
+
+
     /*用post方式新增資料
         //return redirect(route('posts.index'));
         $post=new Post();
@@ -97,6 +91,24 @@ Route::get('/', function () {
       $comment->post_id='18';
       $comment->save();
       return 'save,OK';*/
+
+      /*練習七 透過comments()關係，擷取多筆comments資料
+      $post=Post::find(10);
+      echo '標題:'.$post->title."<br>";
+      echo '內容:'.$post->content."<br>";
+      $comments=$post->comments()->get();
+      foreach ($comments as $comment){
+          echo '留言:'.$comment->content."<br>";
+          echo '----------------'.'<br>';
+      }
+      */
+
+
+    $comment = Comment::find(16);
+    $post = $comment->post()->first();echo $post->title.'<br>';
+    echo $post->content.'<br>';
+
+
 
 
 
