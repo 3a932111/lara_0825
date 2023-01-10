@@ -21,15 +21,14 @@ use App\Models\Comment;
 Route::get('/', function () {
 
 
+    //用post方式新增資料
+//        //return redirect(route('posts.index'));
+//        $post=new Post();
+//        $post->title='test title';
+//        $post->content='test content';
+//        $post->save();
+//        return 'save,OK';
 
-    /*用post方式新增資料
-        //return redirect(route('posts.index'));
-        $post=new Post();
-        $post->title='test title';
-        $post->content='test content';
-        $post->save();
-        return 'save,OK';
-    */
 
      /*用create方式新增資料
       post::create([
@@ -38,11 +37,21 @@ Route::get('/', function () {
       ]);*/
 
 
-      /*$posts=Post::all();
-      dd($posts);*/
+    //練習3-3
+//      $posts=Post::all();
+//      foreach ($posts as $post){
+//          echo '編號: '.$post->id.'<br>';
+//          echo '標題: '.$post->title.'<br>';
+//          echo '內容: '.$post->content.'<br>';
+//          echo '張貼時間: '.$post->created_at.'<br>';
+//      }
+//      dd($posts);
 
-      /*$post=Post::find(1);
-        dd($post);*/
+    //練習3-2
+      $post=Post::find(1);
+      echo '標題: '.$post->title.'<br>';
+      echo '內容: '.$post->content.'<br>';
+        dd($post);
 
     /*$posts=Post::where('id','<',10)->orderBy('id','DESC')->get();
       dd($posts);*/
